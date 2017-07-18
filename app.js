@@ -51,7 +51,7 @@ var lock = require('./routes/lock')(router, db.Users);
 
 //router setting
 app.use('/', index);
-app.use('/menu', index);
+app.use('/menu', menu);
 app.use('/users', users);
 app.use('/auth', auth);
 app.use('/lock', lock);
