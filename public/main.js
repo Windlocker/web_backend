@@ -90,10 +90,11 @@ $(function () {
       });
     })
     $("#register").click(function() {
+      console.log("asdfafds");
       $.ajax({
-        url: '/auth/signup',
+        url: 'https://iwin247.kr/auth/signup',
         dataType: 'json',
-        type: 'POST',
+        method: 'POST',
         data: {
           name: $("#user_name").val(),
           id: $("#user_id").val(),
