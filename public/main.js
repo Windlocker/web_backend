@@ -100,8 +100,8 @@ $(function () {
         dataType: 'json',
         type: 'POST',
         data: {
-          user_id: $("#user_id").val(),
-          user_pw: $("#user_pw").val(),
+          id: $("#user_id").val(),
+          passwd: $("#user_pw").val(),
         },
         success: function(response) {
           console.log(response);
