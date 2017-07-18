@@ -1,6 +1,7 @@
 module.exports = (router, Users, passport, rndString) =>{
   router.post('/signup', (req, res) => {
     var params = ['id', 'passwd', 'name'];
+    console.log(req.body);
 
     if(check_param(req.body, params)){
       const id = req.body.id;
