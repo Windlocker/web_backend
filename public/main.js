@@ -104,7 +104,7 @@ $(function () {
           passwd: $("#user_pw").val(),
         },
         success: function(response) {
-          console.log(response);
+          location.reload();
         }
       });
     })
