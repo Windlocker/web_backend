@@ -31,6 +31,7 @@ module.exports = (router, Users, passport, rndString) =>{
         if(err) return res.status(500).send("DB err");
         if(user) {
           req.session.name = user.name;
+          req.session.token = user.token;
           return res.status(200).json(user);
         }
         else return res.status(404).send("incorrect id or passwd");
