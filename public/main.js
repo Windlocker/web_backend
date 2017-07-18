@@ -1,4 +1,20 @@
 //u know
+$("#signup").click(function() {
+  console.log("asdfafds");
+  $.ajax({
+    url: 'http://iwin247.kr:3003/auth/signup',
+    method: 'POST',
+    data: {
+      name: $("#user_name").val(),
+      id: $("#user_id").val(),
+      passwd: $("#user_pw").val(),
+    },
+    success: function(response) {
+      alert("hell world");
+    }
+  });
+})
+
 $(function () {
         var firstS = $('.first_go');
         var deviceS = $('.device_go');
@@ -86,21 +102,6 @@ $(function () {
         },
         success: function(response) {
 
-        }
-      });
-    })
-    $("#signup").click(function() {
-      console.log("asdfafds");
-      $.ajax({
-        url: 'http://iwin247.kr:3003/auth/signup',
-        method: 'POST',
-        data: {
-          name: $("#user_name").val(),
-          id: $("#user_id").val(),
-          passwd: $("#user_pw").val(),
-        },
-        success: function(response) {
-          alert("hell world");
         }
       });
     })
