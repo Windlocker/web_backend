@@ -13,6 +13,7 @@ var rndString = require("randomstring");
 var fs = require('fs');
 var router = express.Router();
 var async = require('async');
+var CORS = require('cors')();
 require('./func');
 //module setting
 var db = require('./mongo');
@@ -34,6 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(CORS);
 
 //router setting
 var index = require('./routes/index')(router);
