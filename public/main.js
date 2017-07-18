@@ -92,8 +92,7 @@ $(function () {
     $("#register").click(function() {
       console.log("asdfafds");
       $.ajax({
-        url: 'http://iwin247.kr:3003/auth/signup',
-        dataType: 'json',
+        url: '/auth/signup',
         method: 'POST',
         data: {
           name: $("#user_name").val(),
