@@ -20,6 +20,7 @@ var db = require('./mongo');
 var passport = require('./passport')(db.Users);
 
 var port = process.env.PORT || 3003;
+var store = sessionstore.createSessionStore();
 
 //set engin
 app.set('port', port);
@@ -36,15 +37,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(CORS);
+app.use( session( { store: store, secret: '쿠키먹고싶어요', saveUninitialized: true}));
 
 //router setting
 var index = require('./routes/index')(router);
+var menu = require('./routes/menu')(router);
 var users = require('./routes/users')(router, db.Users, passport);
 var auth = require('./routes/auth')(router, db.Users, passport, rndString);
 var lock = require('./routes/lock')(router, db.Users);
 
 //router setting
 app.use('/', index);
+app.use('/menu', index);
 app.use('/users', users);
 app.use('/auth', auth);
 app.use('/lock', lock);
