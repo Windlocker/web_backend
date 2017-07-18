@@ -3,6 +3,8 @@ var logger = require('morgan');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var sessionstore = require('sessionstore');
 var cookie = require('cookie');
 var path = require('path');
 var bodyParser = require('body-parser');
@@ -14,7 +16,6 @@ var fs = require('fs');
 var router = express.Router();
 var async = require('async');
 var CORS = require('cors')();
-var sessionstore = require('sessionstore');
 
 require('./func');
 //module setting
