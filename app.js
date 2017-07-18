@@ -14,6 +14,8 @@ var fs = require('fs');
 var router = express.Router();
 var async = require('async');
 var CORS = require('cors')();
+var sessionstore = require('sessionstore');
+
 require('./func');
 //module setting
 var db = require('./mongo');
