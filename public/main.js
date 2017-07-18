@@ -5,9 +5,9 @@ $("#signup").click(function() {
     url: 'http://iwin247.kr:3003/auth/signup',
     method: 'POST',
     data: {
-      name: $("#user_name").val(),
-      id: $("#user_id").val(),
-      passwd: $("#user_pw").val(),
+      name: $("#auth_name").val(),
+      id: $("#auth_id").val(),
+      passwd: $("#auth_pw").val(),
     },
     success: function(response) {
       alert("hell world");
