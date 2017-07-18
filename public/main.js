@@ -10,7 +10,10 @@ $("#signup").click(function() {
       passwd: $("#auth_pw").val(),
     },
     success: function(response) {
-      alert("hell world");
+      alert("가입되었습니다");
+    },
+    error:function(){
+      alert("가입 실패");
     }
   });
 })
@@ -101,7 +104,7 @@ $(function () {
           user_pw: $("#user_pw").val(),
         },
         success: function(response) {
-
+          console.log(response);
         }
       });
     })
