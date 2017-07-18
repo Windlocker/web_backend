@@ -18,7 +18,7 @@ require('./func');
 var db = require('./mongo');
 var passport = require('./passport')(db.Users);
 
-var port = process.env.PORT || 3002;
+var port = process.env.PORT || 3003;
 
 //set engin
 app.set('port', port);
@@ -39,7 +39,7 @@ app.use(passport.session());
 var index = require('./routes/index')(router);
 var users = require('./routes/users')(router, db.Users, passport);
 var auth = require('./routes/auth')(router, db.Users, passport, rndString);
-var open = require('./routes/open')(router, db.Users);
+var lock = require('./routes/lock')(router, db.Users);
 
 //router setting
 app.use('/', index);
