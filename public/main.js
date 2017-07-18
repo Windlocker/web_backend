@@ -1,10 +1,10 @@
-//u know  
+//u know
 $(function () {
         var firstS = $('.first_go');
         var deviceS = $('.device_go');
         var loginS = $('.login_go');
         var registerS = $('.reg_go');
-         
+
         firstS.click(function () {
             $('#Device_Check').css("display", "none");
             $('#Loginpage').css("display", "none");
@@ -44,7 +44,7 @@ $(function () {
     $(function () {
         var useS = $('#use_go');
         var logS = $('#log_go');
-        
+
         logS.click(function () {
             $('#system_use').fadeIn();
             $('#log_go').css("border-bottom", "solid 5px white");
@@ -63,7 +63,7 @@ $(function () {
 $(function () {
         var useS = $('#page1_go');
         var logS = $('#page2_go');
-        
+
         logS.click(function () {
             $('#page2').fadeIn();
             $('#page1').css("display", "none");
@@ -73,7 +73,7 @@ $(function () {
             $('#page2').css("display", "none");
         });
     });
-    
+
 //ajax
     $('#login').click(function() {
       $.ajax({
@@ -89,23 +89,23 @@ $(function () {
         }
       });
     })
-    
+
     $('#register').click(function() {
       $.ajax({
-        url: '/register',
+        url: '/auth/signup',
         dataType: 'json',
         type: 'POST',
         data: {
-          user_name: $("#user_name").val(),
-          user_id: $("#user_id").val(),
-          user_pw: $("#user_pw").val(),
+          name: $("#user_name").val(),
+          id: $("#user_id").val(),
+          passwd: $("#user_pw").val(),
         },
         success: function(response) {
-
+          alert("hell world");
         }
       });
     })
-    
+
        $('#code_submit').click(function() {
       $.ajax({
         url: '/code_confirm',
@@ -115,13 +115,13 @@ $(function () {
           'code': $('#code').val()
         },
         success: function(response) {
-        
+
         }
       });
     })
-       
-       
-    
+
+
+
     $(document).on('keypress','#code', function(e){
 if($(this).val().length >= 5)
    {
