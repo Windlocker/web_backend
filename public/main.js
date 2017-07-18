@@ -96,7 +96,7 @@ $(function () {
 //ajax
     $('#login').click(function() {
       $.ajax({
-        url: '/login',
+        url: '/auth/signin',
         dataType: 'json',
         type: 'POST',
         data: {
