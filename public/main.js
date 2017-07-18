@@ -89,9 +89,7 @@ $(function () {
         }
       });
     })
-
-    $('#register').click(function() {
-      console.log("asdf");
+    $("#register").click(function() {
       $.ajax({
         url: '/auth/signup',
         dataType: 'json',
