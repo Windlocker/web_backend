@@ -9,6 +9,7 @@
     <meta name="description" content="WINDLOCKER/PC 관리 솔루션" />
     <meta name="msapplication-TileColor" content="#00a1cf">
     <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
     <link rel="stylesheet" href="./w3.css">
     <link rel="stylesheet" href="./css">
@@ -19,7 +20,8 @@
 
 <body>
     <div class="w3-bar w3-top w3-large" style="z-index:4;color:white;padding-top:5px;background: linear-gradient( to right, #00b5d4 20%,#00a1cf, #008eca );">
-          <button class="button-collapse w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-grey" data-activates="slide-out"><a href="#"><i class="fa fa-bars" style="font-size:7vw;"></i></a></button><span class="w3-bar-item"> 메인</span></span>
+<a href="./main.html" class="button-collapse w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" data-activates="slide-out"><i class="fa fa-bars" style="font-size:7vw;"></i>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관리 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <div class="w3-bar-item w3-right"><i class="fa" style="font-size:7vw;">&nbsp;</i></div>
         <a id="use_go" class="w3-bar-item w3-button" style="width:50%; border-bottom: 5px solid white;">시스템 사용량</a>
     <a id="log_go" class="w3-bar-item w3-button" style="width:50%">시스템 로그</a>
          </div>
@@ -81,12 +83,13 @@
     <li><div class="divider"></div></li>
     <li><a href="/Send_File"><img src="./img/Share.png" width="35" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">파일공유</b></a></li>
     <li><div class="divider"></div></li>
-    <li><a href="//auth/signout"><img src="./img/Logout.png" width="35" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">로그아웃</b></a></li>
+    <li><a href="/auth/signout"><img src="./img/Logout.png" width="35" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">로그아웃</b></a></li>
     <li><div class="divider"></div></li>
     </ul>
 
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
   <script src="/main.js"></script>
+  <script src="socket.js"></script>
 
 </html>

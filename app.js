@@ -16,6 +16,7 @@ var fs = require('fs');
 var router = express.Router();
 var async = require('async');
 var CORS = require('cors')();
+var device = require('express-device');
 
 require('./func');
 //module setting
@@ -41,13 +42,33 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(CORS);
 app.use( session( { store: store, secret: '쿠키먹고싶어요', saveUninitialized: true}));
+app.use(device.capture());
+
+//create server
+var server = app.listen(port);
+app.on('error', onError);
+app.on('listening', onListening);
+
+var io = require('socket.io')(server);
+
+io.on('connection', function(socket){
+  socket.on('message', function(msg){
+    io.emit('message', msg);
+  });
+
+  socket.on('test', function(msg){
+    io.emit('test', msg);
+  });
+});
 
 //router setting
-var index = require('./routes/index')(express.Router());
+var index = require('./routes/index')(express.Router(), device);
 var menu = require('./routes/menu')(express.Router());
 var users = require('./routes/users')(express.Router(), db.Users, passport);
 var auth = require('./routes/auth')(express.Router(), db.Users, passport, rndString);
 var lock = require('./routes/lock')(express.Router(), db.Users);
+var file = require('./routes/file')(express.Router(), db.Users);
+var system = require('./routes/system')(express.Router(), db.Users, io);
 
 //router setting
 app.use('/', index);
@@ -55,12 +76,8 @@ app.use('/menu', menu);
 app.use('/users', users);
 app.use('/auth', auth);
 app.use('/lock', lock);
-
-
-//create server
-app.listen(port);
-app.on('error', onError);
-app.on('listening', onListening);
+app.use('/file', file);
+app.use('/system', system);
 
 //error handle
 function normalizePort(val) {
