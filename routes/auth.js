@@ -51,7 +51,7 @@ module.exports = (router, Users, passport, rndString) =>{
      }else{
        return res.status(400).send("param missing or null");
      }
-  })
+  });
 
   return router;
 }
