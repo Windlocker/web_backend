@@ -43,11 +43,11 @@ app.use(CORS);
 app.use( session( { store: store, secret: '쿠키먹고싶어요', saveUninitialized: true}));
 
 //router setting
-var index = require('./routes/index')(router);
-var menu = require('./routes/menu')(router);
-var users = require('./routes/users')(router, db.Users, passport);
-var auth = require('./routes/auth')(router, db.Users, passport, rndString);
-var lock = require('./routes/lock')(router, db.Users);
+var index = require('./routes/index')(express.Router());
+var menu = require('./routes/menu')(express.Router());
+var users = require('./routes/users')(express.Router(), db.Users, passport);
+var auth = require('./routes/auth')(express.Router(), db.Users, passport, rndString);
+var lock = require('./routes/lock')(express.Router(), db.Users);
 
 //router setting
 app.use('/', index);
