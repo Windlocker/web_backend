@@ -123,6 +123,21 @@ $(function () {
       });
     })
 
+    //잠금 여부 처리
+    $('#lock_comfirm').click(function() {
+   $.ajax({
+     url: '/lock',
+     dataType: 'json',
+     type: 'POST',
+     data: {
+       
+     },
+     success: function(response) {
+
+     }
+   });
+ })
+
 
 
     $(document).on('keypress','#code', function(e){
@@ -132,6 +147,15 @@ if($(this).val().length >= 5)
    }
 
 });
+
+$(document).on('keypress','#code2', function(e){
+if($(this).val().length >= 4)
+{
+   e.preventDefault();
+}
+
+});
+
 $(document).ready(function(){ var fileTarget = $('.filebox .upload-hidden'); fileTarget.on('change', function(){ if(window.FileReader){ var filename = $(this)[0].files[0].name; } else {  var filename = $(this).val().split('/').pop().split('\\').pop();  } $(this).siblings('.upload-name').val(filename); }); });
 $(".button-collapse").sideNav();
 $(document).ready(function() {

@@ -51,6 +51,13 @@ module.exports = (router, Users, passport, rndString) =>{
      }else{
        return res.status(400).send("param missing or null");
      }
+  })
+  
+  .get('/signout', (req, res)=>{
+    req.session.destroy(function(err){
+      console.log(err);
+    });
+    res.redirect("http://iwin247.kr:3003");
   });
 
   return router;

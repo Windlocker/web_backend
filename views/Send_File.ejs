@@ -16,46 +16,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <style>
-input[type="number"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  width: 4.05em;
-  font-size: 1em;
-}
+    input[type="number"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      width: 3.25em;
+      font-size: 1em;
+    }
 
-.input-wrapper, input[type="number"] {
-  font-family: monospace;
-  font-weight: bold;
-  color:black;
-  letter-spacing: .3em;
-}
+    .input-wrapperr, input[type="number"] {
+      font-family: monospace;
+      font-weight: bold;
+      color:black;
+      letter-spacing: .3em;
+    }
 
-.input-wrapper {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  padding-bottom: .2em;
-  font-size: 200%;
-}
+    .input-wrapperr {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      padding-bottom: .2em;
+      font-size: 200%;
+    }
 
-.input-wrapper:after {
-  content: "——————————————————————————————";
-  line-height: .3em;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: initial;
-}
+    .input-wrapperr:after {
+      content: "——————————————————————————————";
+      line-height: .3em;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: initial;
+    }
     </style>
 </head>
 
 <body>
     <div class="w3-bar w3-top w3-large" style="z-index:4;color:white;padding-top:5px;background: linear-gradient( to right, #00b5d4 20%,#00a1cf, #008eca );">
-      <button class="button-collapse w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-grey" data-activates="slide-out"><a href="#"><i class="fa fa-bars" style="font-size:7vw;"></i></a></button><span class="w3-bar-item"> 메인</span> <span class="w3-bar-item w3-right"><i class="fa fa-ellipsis-v" style="font-size:7vw;"></i></span> </div>
+      <button class="button-collapse w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-grey" data-activates="slide-out"><a href="#"><i class="fa fa-bars" style="font-size:7vw;"></i></a></button><span class="w3-bar-item"> 메인</span>  </div>
 
 
     <div class="bg w3-display-container w3-animate-opacity w3-text-white" style="background:#f1f1f1">
@@ -91,8 +91,8 @@ input[type="number"] {
                <h3 style="margin:0;font-weight:bold;color:black">인증 번호 확인</h3>
                <h4 style="margin:0;font-weight:bold;color:grey">전송할 파일을 선택해주세요</h4>
                   <br>
-              <div class="input-wrapper" >
-  <input pattern="[0-9]*" id="code" inputmode="numeric" type="number" style="color:black" >
+              <div class="input-wrapperr" >
+  <input pattern="[0-9]*" id="code2" inputmode="numeric" type="number" style="color:black" >
 </div>
 
 
@@ -109,27 +109,26 @@ input[type="number"] {
 
         </div>
     </div>
-    
+
     <ul id="slide-out" class="side-nav">
-  <li><div class="user-view">
+    <li><div class="user-view">
     <div class="background" style="background: linear-gradient( to right, #00b5d4 20%,#00a1cf, #008eca );">
     <img src="./img/Logo.png" height="150vw" style="opacity:0.3">
     </div>
     <br><br>
-    <a><span class="white-text name">ejs 이름처리</span></a>
-    <a><span class="white-text email">ejs 이메일처리</span></a>
-  </div></li>
-  <li><a href="#!"><img src="./img/Shield_Gradient.png" height="40" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">잠금</b></a></li>
-  <li><div class="divider"></div></li>
-  <li><a href="#!"><img src="./img/Shield_Gradient.png" height="40" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">보호</b></a></li>
-  <li><div class="divider"></div></li>
-  <li><a href="#!"><img src="./img/Shield_Gradient.png" height="40" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">관리</b></a></li>
-  <li><div class="divider"></div></li>
-  <li><a href="#!"><img src="./img/Shield_Gradient.png" height="40" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">파일공유</b></a></li>
-  <li><div class="divider"></div></li>
-  <li><a href="#!"><img src="./img/Shield_Gradient.png" height="40" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">로그아웃</b></a></li>
-  <li><div class="divider"></div></li>
-</ul>
+    <a><span class="white-text name"><%= name%></span></a>
+    </div></li>
+    <li id="lock_comfirm"><a href="/Lock_??"><img src="./img/Lock.png" width="35" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">잠금</b></a></li>
+    <li><div class="divider"></div></li>
+    <li><a href="/Process_Protect"><img src="./img/Shield.png" width="35" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">보호</b></a></li>
+    <li><div class="divider"></div></li>
+    <li><a href="/System"><img src="./img/Manage.png" width="35" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">관리</b></a></li>
+    <li><div class="divider"></div></li>
+    <li><a href="/Send_File"><img src="./img/Share.png" width="35" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">파일공유</b></a></li>
+    <li><div class="divider"></div></li>
+    <li><a href="//auth/signout"><img src="./img/Logout.png" width="35" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">로그아웃</b></a></li>
+    <li><div class="divider"></div></li>
+    </ul>
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>

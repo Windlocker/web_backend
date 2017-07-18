@@ -6,12 +6,17 @@
 <meta name="description" content="WINDLOCKER/PC 관리 솔루션" />
 <meta name="msapplication-TileColor" content="#00a1cf">
 <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
 <link rel="stylesheet" href="./w3.css">
 <link rel="stylesheet" href="./css">
 <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head><body>
 
+  <div class="w3-bar w3-top w3-large" style="z-index:4;color:white;padding-top:5px;background: linear-gradient( to right, #00b5d4 20%,#00a1cf, #008eca );">
+        <button class="button-collapse w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-grey" data-activates="slide-out"><a href="#"><i class="fa fa-bars" style="font-size:7vw;"></i></a></button><span class="w3-bar-item"> 메인</span> </span>
+       </div>
 <div class="bg w3-display-container w3-animate-opacity w3-text-white">
 
 
@@ -20,7 +25,7 @@
 
 
   <div class="w3-display-middle w3-center">
-
+<br><br>
     <img src="./img/LogoType.png" class="w3-jumbo w3-animate-top" style="width:50vw; margin-bottom: 10%;" alt="LOGO_text" oncontextmenu="return false">
 
     <div class="w3-large w3-device-box">
@@ -39,20 +44,44 @@
     </div>
 
    <br>
-    <p class="w3-large w3-center"> <a href="./main.html" class="w3-button w3-custom-box" style="width:80vw">메인으로 돌아가기</a>
+
+    <p class="w3-large w3-center"> <a href="/Lock_setting" class="w3-button w3-custom-box" style="width:80vw">디바이스 잠금 설정</a>
 
     <br><br>
 
-    <button class="w3-button w3-custom-box" onclick="">다른 디바이스 추가</button>
+
     </p>
 
-      <p class="w3-center" id="first_go">초기 화면으로 돌아가기</p>
+      <a href="#" class="w3-center" id="first_go">로그아웃</a>
 
   </div>
 
 
 
 </div>
-<script src="/main.js"></script>
+
+<ul id="slide-out" class="side-nav">
+<li><div class="user-view">
+<div class="background" style="background: linear-gradient( to right, #00b5d4 20%,#00a1cf, #008eca );">
+<img src="./img/Logo.png" height="150vw" style="opacity:0.3">
+</div>
+<br><br>
+<a><span class="white-text name"><%= name%></span></a>
+</div></li>
+<li id="lock_comfirm"><a href="/Lock_??"><img src="./img/Lock.png" width="35" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">잠금</b></a></li>
+<li><div class="divider"></div></li>
+<li><a href="/Process_Protect"><img src="./img/Shield.png" width="35" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">보호</b></a></li>
+<li><div class="divider"></div></li>
+<li><a href="/System"><img src="./img/Manage.png" width="35" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">관리</b></a></li>
+<li><div class="divider"></div></li>
+<li><a href="/Send_File"><img src="./img/Share.png" width="35" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">파일공유</b></a></li>
+<li><div class="divider"></div></li>
+<li><a href="//auth/signout"><img src="./img/Logout.png" width="35" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">로그아웃</b></a></li>
+<li><div class="divider"></div></li>
+</ul>
+
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+<script src="/main.js"></script>
+
 </html>
