@@ -91,6 +91,7 @@ $(function () {
     })
 
     $('#register').click(function() {
+      console.log("asdf");
       $.ajax({
         url: '/auth/signup',
         dataType: 'json',
