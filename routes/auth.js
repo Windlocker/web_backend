@@ -27,7 +27,6 @@ module.exports = (router, Users, passport, rndString) =>{
   .post('/signin', (req,res)=>{
     var params = ['id', 'passwd'];
     if(check_param(req.body, params)){
-      console.log(req.body);
       Users.findOne({id: req.body.id, passwd: req.body.passwd}, {__v:0, _id: 0, passwd: 0}, (err, user)=>{
         if(err) return res.status(500).send("DB err");
         if(user) {
