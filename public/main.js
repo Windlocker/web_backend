@@ -18,6 +18,7 @@ $("#signup").click(function() {
   });
 })
 
+
 $(function () {
         var firstS = $('.first_go');
         var deviceS = $('.device_go');
@@ -49,15 +50,6 @@ $(function () {
             $('#fisrt_screen').css("display", "none");
         });
 });
-
-     $(function () {
-        var codeS = $('#code_go');
-
-        codeS.click(function () {
-            $('.codes').fadeIn();
-            $('#code_go').css("display", "none");
-        });
-    });
 
 
     $(function () {
@@ -123,19 +115,27 @@ $(function () {
       });
     })
 
-    //잠금 여부 처리
-    $('#lock_comfirm').click(function() {
+
+$('#code_go').click(function() {
    $.ajax({
      url: '/lock',
      dataType: 'json',
      type: 'POST',
-     data: {
-       
-     },
      success: function(response) {
-
      }
    });
+        location.href = "http://iwin247.kr:3003/lock/locked"
+ })
+
+$('#lock').click(function() {
+   $.ajax({
+     url: '/lock',
+     dataType: 'json',
+     type: 'POST',
+     success: function(response) {
+     }
+   });
+        location.href = "http://iwin247.kr:3003/lock/locked"
  })
 
 
@@ -156,8 +156,5 @@ if($(this).val().length >= 4)
 
 });
 
-$(document).ready(function(){ var fileTarget = $('.filebox .upload-hidden'); fileTarget.on('change', function(){ if(window.FileReader){ var filename = $(this)[0].files[0].name; } else {  var filename = $(this).val().split('/').pop().split('\\').pop();  } $(this).siblings('.upload-name').val(filename); }); });
+$(document).ready(function(){ var fileTarget = $('.filebox .upload-hidden'); fileTarget.on('change', function(){ if(window.FileReader){ var filename = $(this)[0].files[0].name; } else {  var filename = $(this).val().split('/').pop().split('\\').pop(); }$(this).siblings('.upload-name').val(filename); }); });
 $(".button-collapse").sideNav();
-$(document).ready(function() {
-   $('.rip').flexVerticalCenter();
- });
