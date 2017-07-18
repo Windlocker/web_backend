@@ -9,12 +9,12 @@
     <meta name="description" content="WINDLOCKER/PC 관리 솔루션" />
     <meta name="msapplication-TileColor" content="#00a1cf">
     <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
     <link rel="stylesheet" href="./w3.css">
     <link rel="stylesheet" href="./css">
     <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="./main.js"></script>
     <style>
 input[type="number"] {
   -webkit-appearance: none;
@@ -55,13 +55,12 @@ input[type="number"] {
 
 <body>
     <div class="w3-bar w3-top w3-large" style="z-index:4;color:white;padding-top:5px;background: linear-gradient( to right, #00b5d4 20%,#00a1cf, #008eca );">
-        <a href="./main.html" class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey"><i class="fa fa-bars" style="font-size:7vw;"></i>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;보호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <div class="w3-bar-item w3-right"><i class="fa fa-ellipsis-v" style="font-size:7vw;"></i></div>
-         </div>
-         
-        
+      <button class="button-collapse w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-grey" data-activates="slide-out"><a href="#"><i class="fa fa-bars" style="font-size:7vw;"></i></a></button><span class="w3-bar-item"> 메인</span> <span class="w3-bar-item w3-right"><i class="fa fa-ellipsis-v" style="font-size:7vw;"></i></span> </div>
+
+
     <div class="bg w3-display-container w3-animate-opacity w3-text-white" style="background:#f1f1f1">
         <div class="w3-display-middle w3-center">
-           
+
            <div id="page1" >
            <div class="w3-large w3-custom-box2 w3-animate-top " style="width:95vw;padding:4vw;margin:10vh 10px 10px 10px">
            <h3 style="text-align:left;margin:0;color:skyblue">1/2</h3>
@@ -71,20 +70,20 @@ input[type="number"] {
                   <br>
                <div class="filebox"> <input class="upload-name" value="파일선택" disabled="disabled"> <label for="ex_filename">업로드</label> <input type="file" id="ex_filename" class="upload-hidden"> </div>
 
-               
-                   <br><br>   <br><br>  
-               
+
+                   <br><br>   <br><br>
+
                 <p class="w3-large w3-center" id="page2_go"><a href="#" class="w3-button w3-blue w3-text-white" style="width:75vw">확인 및 인증 번호 발송</a></p>
             <p class="w3-large w3-center"><a href="main.html" class="w3-button w3-blue w3-text-white" style="width:75vw">취소</a></p>
-            
-               
+
+
         </div>
            <br>
-            
-            
+
+
         </div>
-             
-            
+
+
            <div  id="page2" class="w3-large w3-custom-box2 w3-animate-top  w3-hide" style="width:95vw;padding:4vw;margin:10vh 10px 10px 10px">
            <h3 style="text-align:left;margin:0;color:skyblue">2/2</h3>
            <img src="./img/Logo_Gradient.png" class="w3-jumbo w3-animate-top"  width="180" alt="file" oncontextmenu="return false">
@@ -96,20 +95,44 @@ input[type="number"] {
   <input pattern="[0-9]*" id="code" inputmode="numeric" type="number" style="color:black" >
 </div>
 
-               
-                   <br><br>   <br><br>  
-               
+
+                   <br><br>   <br><br>
+
                 <p class="w3-large w3-center"><a href="#" class="w3-button w3-blue w3-text-white" style="width:75vw">인증 및 파일 전송</a></p>
             <p class="w3-large w3-center"><a id="page1_go" href="#" class="w3-button w3-blue w3-text-white" style="width:75vw">취소</a></p>
-            
-               
+
+
            <br>
-            
-            
+
+
         </div>
-            
+
         </div>
     </div>
+    
+    <ul id="slide-out" class="side-nav">
+  <li><div class="user-view">
+    <div class="background" style="background: linear-gradient( to right, #00b5d4 20%,#00a1cf, #008eca );">
+    <img src="./img/Logo.png" height="150vw" style="opacity:0.3">
+    </div>
+    <br><br>
+    <a><span class="white-text name">ejs 이름처리</span></a>
+    <a><span class="white-text email">ejs 이메일처리</span></a>
+  </div></li>
+  <li><a href="#!"><img src="./img/Shield_Gradient.png" height="40" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">잠금</b></a></li>
+  <li><div class="divider"></div></li>
+  <li><a href="#!"><img src="./img/Shield_Gradient.png" height="40" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">보호</b></a></li>
+  <li><div class="divider"></div></li>
+  <li><a href="#!"><img src="./img/Shield_Gradient.png" height="40" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">관리</b></a></li>
+  <li><div class="divider"></div></li>
+  <li><a href="#!"><img src="./img/Shield_Gradient.png" height="40" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">파일공유</b></a></li>
+  <li><div class="divider"></div></li>
+  <li><a href="#!"><img src="./img/Shield_Gradient.png" height="40" style="margin-left:-10px"><b class="rip" style="font-size:20px;color:grey;margin-left:30px; vertical-align:8px">로그아웃</b></a></li>
+  <li><div class="divider"></div></li>
+</ul>
+
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+<script src="/main.js"></script>
 
 </html>
