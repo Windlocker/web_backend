@@ -29,7 +29,7 @@ $(function () {
             $('#registerpage').fadeIn();
             $('#fisrt_screen').css("display", "none");
         });
-    });
+});
 
      $(function () {
         var codeS = $('#code_go');
@@ -89,7 +89,7 @@ $(function () {
         }
       });
     })
-    $("#register").click(function() {
+    $("#signup").click(function() {
       console.log("asdfafds");
       $.ajax({
         url: 'http://iwin247.kr:3003/auth/signup',
