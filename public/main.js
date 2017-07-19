@@ -138,6 +138,10 @@ $('#lock').click(function() {
         location.href = "http://iwin247.kr:3003/lock/locked"
  })
 
+$('#sync').click(function() {
+ window.open("http://iwin247.kr:3002/upload/sync/"+$("#code").val());
+})
+
 
 
     $(document).on('keypress','#code', function(e){
@@ -153,18 +157,33 @@ if($(this).val().length >= 4)
 {
    e.preventDefault();
 }
-
 });
 
-$(document).ready(function(){ 
-  var fileTarget = $('.filebox .upload-hidden');
-  fileTarget.on('change', function(){ 
-   if(window.FileReader){ 
-     var filename = $(this)[0].files[0].name; 
-   } else {  
-     var filename = $(this).val().split('/').pop().split('\\').pop(); 
+$(document).ready(function(){
+
+
+  $("input[name=code2]").keyup(function(event){
+
+   if (!(event.keyCode >=37 && event.keyCode<=40)) {
+
+    var inputVal = $(this).val();
+
+    $(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
+
    }
-$(this).siblings('.upload-name').val(filename); 
- }); 
+
+  });
+
+});
+$(document).ready(function(){
+  var fileTarget = $('.filebox .upload-hidden');
+  fileTarget.on('change', function(){
+   if(window.FileReader){
+     var filename = $(this)[0].files[0].name;
+   } else {
+     var filename = $(this).val().split('/').pop().split('\\').pop();
+   }
+$(this).siblings('.upload-name').val(filename);
+ });
 });
 $(".button-collapse").sideNav();
